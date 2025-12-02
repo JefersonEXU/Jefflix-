@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- SEO Principal -->
-    <title>Jefflix | www.jefflix.com.br - Filmes e Séries Online</title>
-    <meta name="description" content="Assista a filmes, séries e animes online em HD no Jefflix (www.jefflix.com.br). A plataforma de streaming mais rápida do Brasil com IA integrada." />
-    <meta name="keywords" content="jefflix, jefflix.com.br, assistir filmes online, séries gratis, streaming brasil, filmes 4k" />
+    <title>Jefflix | Streaming Premium</title>
+    <meta name="description" content="Assista a filmes, séries e animes online em HD no Jefflix. A plataforma de streaming mais rápida do Brasil com IA integrada." />
+    <meta name="keywords" content="jefflix, assistir filmes online, séries gratis, streaming brasil, filmes 4k" />
     <meta name="author" content="Jefflix Inc." />
     <link rel="canonical" href="https://www.jefflix.com.br" />
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.jefflix.com.br" />
     <meta property="og:title" content="Jefflix | O Streaming do Futuro" />
-    <meta property="og:description" content="Acesse www.jefflix.com.br e confira nossa biblioteca exclusiva. Transforme sua experiência de cinema." />
+    <meta property="og:description" content="Acesse o Jefflix e confira nossa biblioteca exclusiva. Transforme sua experiência de cinema." />
     <meta property="og:image" content="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=1200&h=630&auto=format&fit=crop" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.jefflix.com.br" />
-    <meta property="twitter:title" content="Jefflix | www.jefflix.com.br" />
+    <meta property="twitter:title" content="Jefflix | Streaming Premium" />
     <meta property="twitter:description" content="O melhor do streaming está aqui. Acesse agora." />
     <meta property="twitter:image" content="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=1200&h=630&auto=format&fit=crop" />
+
+    <!-- PWA Settings -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#84cc16">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -41,6 +45,13 @@
       .no-scrollbar {
           -ms-overflow-style: none;  /* IE and Edge */
           scrollbar-width: none;  /* Firefox */
+      }
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.3s ease-out forwards;
       }
     </style>
   <script type="importmap">

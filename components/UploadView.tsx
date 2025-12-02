@@ -62,7 +62,7 @@ const UploadView: React.FC<UploadViewProps> = ({ onUpload }) => {
         newMovies.push({
             id: `ext-${Date.now()}`,
             title: externalTitle,
-            description: userNotes || "Conteúdo adicionado via Link Externo (Jefflix.com.br).",
+            description: userNotes || "Conteúdo adicionado via Link Externo.",
             genre: "Web / Online",
             matchScore: 100,
             year: new Date().getFullYear(),
@@ -191,7 +191,7 @@ const UploadView: React.FC<UploadViewProps> = ({ onUpload }) => {
             >
                 <Globe size={32} className={uploadType === 'external' ? 'text-lime-400' : ''} />
                 <span className="font-bold">Link Online</span>
-                <span className="text-xs opacity-70">jefflix.com.br</span>
+                <span className="text-xs opacity-70">URL / Embed</span>
             </button>
         </div>
 
@@ -211,18 +211,18 @@ const UploadView: React.FC<UploadViewProps> = ({ onUpload }) => {
                         <input 
                             type="text" 
                             className="w-full bg-zinc-950 border border-zinc-700 rounded-lg p-3 text-white focus:ring-1 focus:ring-lime-400 outline-none"
-                            placeholder="Ex: Tutorial Exclusivo"
+                            placeholder="Ex: Trailer Oficial"
                             value={externalTitle}
                             onChange={(e) => setExternalTitle(e.target.value)}
                         />
                     </div>
 
                     <div>
-                        <label className="block text-xs text-gray-500 mb-1">URL do Vídeo (MP4, MKV, WebM)</label>
+                        <label className="block text-xs text-gray-500 mb-1">URL do Vídeo</label>
                         <input 
                             type="text" 
                             className="w-full bg-zinc-950 border border-zinc-700 rounded-lg p-3 text-white focus:ring-1 focus:ring-lime-400 outline-none font-mono text-sm"
-                            placeholder="https://www.jefflix.com.br/video.mp4"
+                            placeholder="https://..."
                             value={externalUrl}
                             onChange={(e) => setExternalUrl(e.target.value)}
                         />
@@ -240,7 +240,7 @@ const UploadView: React.FC<UploadViewProps> = ({ onUpload }) => {
                     </div>
                     
                     <div className="p-3 bg-blue-900/20 border border-blue-900/50 rounded text-xs text-blue-200">
-                        <strong>Dica:</strong> Links adicionados aqui ficam salvos no seu perfil mesmo se você atualizar a página.
+                        <strong>Nota:</strong> Adicione links diretos (MP4) ou links do seu Google Drive/Dropbox para acessar de qualquer lugar.
                     </div>
                 </div>
             ) : (
@@ -254,7 +254,7 @@ const UploadView: React.FC<UploadViewProps> = ({ onUpload }) => {
                 <p className="text-lg font-medium mb-2">
                     {uploadType === 'movie' ? 'Arraste seu filme aqui' : 'Arraste seus episódios aqui'}
                 </p>
-                <p className="text-sm text-gray-500 mb-4">Suporta MP4, WebM até 10GB</p>
+                <p className="text-sm text-gray-500 mb-4">Suporta arquivos até 10GB</p>
                 
                 <button 
                     onClick={() => fileInputRef.current?.click()}
@@ -302,7 +302,7 @@ const UploadView: React.FC<UploadViewProps> = ({ onUpload }) => {
                     <div className="flex-1">
                         <h3 className="font-bold text-gray-200 mb-1">Capa do {uploadType === 'movie' ? 'Filme' : 'Seriado'}</h3>
                         <p className="text-xs text-gray-500 mb-3">
-                            Envie uma imagem JPG ou PNG (Vertical/Poster) para ser usada como capa na sua biblioteca.
+                            Envie uma imagem JPG ou PNG (Vertical/Poster) para ser usada como capa.
                         </p>
                         <button 
                             onClick={() => coverInputRef.current?.click()}
@@ -410,8 +410,8 @@ const UploadView: React.FC<UploadViewProps> = ({ onUpload }) => {
             </button>
              <p className="text-xs text-center text-zinc-500">
                 {uploadType === 'external' 
-                    ? 'Links externos são de responsabilidade do provedor de hospedagem.' 
-                    : 'Arquivos grandes são processados localmente. Metadados gerados via API Gemini.'}
+                    ? 'Use links confiáveis. A visualização depende do navegador.' 
+                    : 'Arquivos grandes são processados localmente e metadados via IA Gemini.'}
              </p>
           </div>
         </div>
